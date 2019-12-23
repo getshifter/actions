@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build docker image
-      run:
+      run: |
         cd base
         docker build -t ${GITHUB_REPOSITORY}:${GITHUB_REF:11} .
     - name: Upload Docker Image
