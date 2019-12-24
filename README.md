@@ -5,7 +5,7 @@
 
 ## Start Sfhiter WordPress action
 
-Start Shifter's WordPress and store WordPress URL in the environment variable `SHIFTER_APP_URL`.
+Start Shifter's WordPress and store WordPress URL in the outputs `SHIFTER_APP_URL`.
 If WordPress is already running, get the URL.
 
 ### Requirements environment variable
@@ -14,13 +14,16 @@ If WordPress is already running, get the URL.
 - `SHIFTER_PASS`: Password
 - `SHIFTER_SITE_ID`: Site ID to launch WordPress
 
-### Inputs / Outputs
+### Inputs
 
 None
 
+### Outputs
+
+- `shifter_app_url`: WordPress Live URL.
+
 ### set environment variable for other jobs
 
-- `SHIFTER_APP_URL`: WordPress URL.
 - `SHIFTER_APP_KEEP`: Used to skip stop if WordPress is already running at the time of job execution. default The default value is `false`(string).
 
 ## Stop Sfhiter WordPress action
@@ -43,6 +46,7 @@ None
     steps:
     - uses: actions/checkout@v1
     - name: Start WordPress
+      id: start
       uses: getshifter/actions/start@master
       env:
         SHIFTER_USER: ${{ secrets.SHIFTER_USER }}
@@ -50,7 +54,7 @@ None
         SHIFTER_SITE_ID: ${{ secrets.SHIFTER_SITE_ID }}
     - name: Show WordPress URL
       run:
-        echo -n ${SHIFTER_APP_URL}
+        echo -n ${{ steps.start.outputs.shifter_app_url }}
     - name: Stop WordPress
       uses: getshifter/actions/stop@master
       env:

@@ -3,3 +3,6 @@ description: 'Start Sfhiter WordPress'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+outputs:
+  shifter_app_url:
+    description: 'WordPress Live URL'

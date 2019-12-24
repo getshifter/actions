@@ -117,7 +117,7 @@ def start():
     s = ShifterAPI()
     s.login()
     url = s.start()
-    print('::set-env name=SHIFTER_APP_URL::{s}'.format(s=url))
+    print('::set-output name=shifter_app_url::{s}'.format(s=url))
     return None
 
 
