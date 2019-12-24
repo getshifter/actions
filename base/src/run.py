@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import base64
 import json
 import os
 import sys
@@ -95,7 +94,7 @@ class ShifterAPI:
         if r.json().get('subdir'):
             wordpress_site_url = ('/').join([wordpress_site_url, r.json().get('subdir')])
 
-        return base64.b64encode(wordpress_site_url.encode('utf-8')).decode()
+        return wordpress_site_url
 
     def stop(self):
         headers = {'Authorization': self.token}
@@ -107,12 +106,6 @@ class ShifterAPI:
         print(r.status_code, r.text)
 
         exit(0)
-
-
-def main():
-    # print(args[0])
-    print('::set-env name=from_python::pypy')
-    return None
 
 
 def start():
