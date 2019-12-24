@@ -118,6 +118,7 @@ def start():
     s.login()
     url = s.start()
     print('::set-output name=shifter_app_url::{s}'.format(s=url))
+    print('::add-mask::{s}'.format(s=url))
     return None
 
 
