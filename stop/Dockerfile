@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/getshifter/actions/getshifter-actions-base:master
+FROM getshifter/actions-base:latest
 LABEL maintener="sawaonboriyu@higanworks.com"
 
 CMD ["stop"]
