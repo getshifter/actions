@@ -105,7 +105,7 @@ class ShifterAPI:
         )
 
         if r.ok:
-            print('Container is terminated')
+            print('Container has been terminated')
             return None
 
         print(r.status_code, r.text)
