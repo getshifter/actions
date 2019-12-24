@@ -1,0 +1,7 @@
+**
+.*
+**/**
+.*/**
+
+!src/run.py
+!src/requirements.txt
