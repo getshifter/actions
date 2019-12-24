@@ -3,21 +3,22 @@
 - getshifter/actions/start
 - getshifter/actions/stop
 
-
-
-
-
-
 ## Start Sfhiter WordPress action
 
 Start Shifter's WordPress and store the base64-encoded WordPress URL in the environment variable `SHIFTER_APP_URL`.
 If WordPress is already running, get the URL.
 
+### Requirements environment variable
+
+- `SHIFTER_USER`: Login username for Shfter
+- `SHIFTER_PASS`: Password
+- `SHIFTER_SITE_ID`: Site ID to launch WordPress
+
 ### Inputs / Outputs
 
 None
 
-### environment variable for other jobs
+### set environment variable for other jobs
 
 - `SHIFTER_APP_URL`: Base64 encoded WordPress URL.
 - `SHIFTER_APP_KEEP`: Used to skip stop if WordPress is already running at the time of job execution. default The default value is `false`(string).
@@ -26,6 +27,12 @@ None
 
 Stop WordPress of Shifter.
 
+### Requirements environment variable
+
+- `SHIFTER_USER`: Login username for Shfter
+- `SHIFTER_PASS`: Password
+- `SHIFTER_SITE_ID`: Site ID to Stop WordPress
+
 ### Inputs / Outputs
 
 None
@@ -33,11 +40,23 @@ None
 ## Example usage
 
 ```
-uses: getshifter/actions/stop@master
-env:
-  SHIFTER_USER: ${{ secrets.SHIFTER_USER }}
-  SHIFTER_PASS: ${{ secrets.SHIFTER_PASS }}
-  SHIFTER_SITE_ID: ${{ secrets.SHIFTER_PASS }}
+    steps:
+    - uses: actions/checkout@v1
+    - name: Start WordPress
+      uses: getshifter/actions/start@master
+      env:
+        SHIFTER_USER: ${{ secrets.SHIFTER_USER }}
+        SHIFTER_PASS: ${{ secrets.SHIFTER_PASS }}
+        SHIFTER_SITE_ID: ${{ secrets.SHIFTER_SITE_ID }}
+    - name: Show WordPress URL
+      run:
+        echo -n ${SHIFTER_APP_URL} | base64 -d
+    - name: Stop WordPress
+      uses: getshifter/actions/stop@master
+      env:
+        SHIFTER_USER: ${{ secrets.SHIFTER_USER }}
+        SHIFTER_PASS: ${{ secrets.SHIFTER_PASS }}
+        SHIFTER_SITE_ID: ${{ secrets.SHIFTER_SITE_ID }}
 ```
 
 - (optional)`SHIFTER_APP_KEEP`: Use when do not want to stop the container.
