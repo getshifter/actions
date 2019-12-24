@@ -1,0 +1,5 @@
+name: 'Start Sfhiter WordPress'
+description: 'Start Sfhiter WordPress'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
