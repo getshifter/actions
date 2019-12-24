@@ -103,9 +103,14 @@ class ShifterAPI:
             self. endpoint + '/sites/{site_id}/wordpress_site/stop'.format(site_id=self.site_id),
             headers=headers
         )
+
+        if r.ok:
+            print('Container is terminated')
+            return None
+
         print(r.status_code, r.text)
 
-        exit(0)
+        return None
 
 
 def start():
