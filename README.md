@@ -53,8 +53,10 @@ None
         SHIFTER_PASS: ${{ secrets.SHIFTER_PASS }}
         SHIFTER_SITE_ID: ${{ secrets.SHIFTER_SITE_ID }}
     - name: Show WordPress URL
+      env:
+        SHIFTER_APP_URL: ${{ secrets.SHIFTER_USER }}
       run:
-        echo ${{ steps.start.outputs.shifter_app_url }}
+        echo ${SHIFTER_APP_URL}
     - name: Stop WordPress
       uses: getshifter/actions/stop@master
       env:
