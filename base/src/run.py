@@ -120,10 +120,11 @@ def stop():
     if os.getenv("SHIFTER_APP_KEEP"):
         if os.getenv("SHIFTER_APP_KEEP") != 'false':
             print('Skipped stop container, due to env SHIFTER_APP_KEEP.')
-    else:
-        s = ShifterAPI()
-        s.login()
-        s.stop()
+            exit(0)
+
+    s = ShifterAPI()
+    s.login()
+    s.stop()
     return None
 
 
