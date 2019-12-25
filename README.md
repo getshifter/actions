@@ -3,7 +3,7 @@
 - [getshifter/actions-start](https://github.com/marketplace/actions/start-sfhiter-wordpress)
 - [getshifter/actions-stop](https://github.com/marketplace/actions/stop-sfhiter-wordpress)
 
-## Start Sfhiter WordPress action
+## Start Shifter WordPress action
 
 Start Shifter's WordPress and store WordPress URL in the outputs `shifter_app_url`.
 If WordPress is already running, get the URL.
@@ -26,7 +26,7 @@ None
 
 - `SHIFTER_APP_KEEP`: Used to skip stop if WordPress is already running at the time of job execution. default The default value is `false`(string).
 
-## Stop Sfhiter WordPress action
+## Stop Shifter WordPress action
 
 Stop WordPress of Shifter.
 
