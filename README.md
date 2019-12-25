@@ -1,7 +1,7 @@
 # Shifter Github Actions
 
-- [getshifter/actions/start](https://github.com/getshifter/actions-start)
-- [getshifter/actions/stop](https://github.com/getshifter/actions-stop)
+- [getshifter/actions-start](https://github.com/getshifter/actions-start)
+- [getshifter/actions-stop](https://github.com/getshifter/actions-stop)
 
 ## Start Sfhiter WordPress action
 
@@ -47,7 +47,7 @@ None
     - uses: actions/checkout@v1
     - name: Start WordPress
       id: start
-      uses: getshifter/actions/start@master
+      uses: getshifter/actions-start@v1
       env:
         SHIFTER_USER: ${{ secrets.SHIFTER_USER }}
         SHIFTER_PASS: ${{ secrets.SHIFTER_PASS }}
@@ -58,7 +58,7 @@ None
       run:
         echo ${SHIFTER_APP_URL}
     - name: Stop WordPress
-      uses: getshifter/actions/stop@master
+      uses: getshifter/actions-stop@v1
       env:
         SHIFTER_USER: ${{ secrets.SHIFTER_USER }}
         SHIFTER_PASS: ${{ secrets.SHIFTER_PASS }}
