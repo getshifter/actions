@@ -5,7 +5,7 @@
 
 ## Start Sfhiter WordPress action
 
-Start Shifter's WordPress and store WordPress URL in the outputs `SHIFTER_APP_URL`.
+Start Shifter's WordPress and store WordPress URL in the outputs `shifter_app_url`.
 If WordPress is already running, get the URL.
 
 ### Requirements environment variable
