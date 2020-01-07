@@ -1,7 +1,7 @@
 # Shifter Github Actions
 
-- [getshifter/actions-start](https://github.com/marketplace/actions/start-sfhiter-wordpress)
-- [getshifter/actions-stop](https://github.com/marketplace/actions/stop-sfhiter-wordpress)
+- [getshifter/actions-start](https://github.com/marketplace/actions/start-shifter-wordpress)
+- [getshifter/actions-stop](https://github.com/marketplace/actions/stop-shifter-wordpress)
 
 ## Start Shifter WordPress action
 
