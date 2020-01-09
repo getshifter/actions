@@ -77,6 +77,10 @@ class ShifterAPI:
                 if r.json() == 'COMPLETE':
                     complete = True
                     break
+                elif r.json().startswith('ERROR_'):
+                    print(r.json())
+                    print('Please retry rater')
+                    break
                 time.sleep(5)
             print()
 
