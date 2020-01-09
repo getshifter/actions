@@ -49,7 +49,7 @@ None
     - uses: actions/checkout@v1
     - name: Start WordPress
       id: start
-      uses: getshifter/actions-start@v1
+      uses: getshifter/actions-start@v2
       env:
         SHIFTER_USER: ${{ secrets.SHIFTER_USER }}
         SHIFTER_PASS: ${{ secrets.SHIFTER_PASS }}
@@ -60,7 +60,7 @@ None
       run:
         echo ${SHIFTER_APP_URL}
     - name: Stop WordPress
-      uses: getshifter/actions-stop@v1
+      uses: getshifter/actions-stop@v2
       env:
         SHIFTER_USER: ${{ secrets.SHIFTER_USER }}
         SHIFTER_PASS: ${{ secrets.SHIFTER_PASS }}
