@@ -1,5 +1,7 @@
 # Shifter Github Actions
 
+[![getshifter/actions-base](http://dockeri.co/image/getshifter/actions-base)](https://hub.docker.com/r/getshifter/actions-base/)
+
 - [getshifter/actions-start](https://github.com/marketplace/actions/start-shifter-wordpress)
 - [getshifter/actions-stop](https://github.com/marketplace/actions/stop-shifter-wordpress)
 
